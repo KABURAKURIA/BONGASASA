@@ -3,88 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kabura Kuria's AI Projects - Bonga Sasa</title>
+  <title>Kabura Kuria's AI Portfolio - Bonga Sasa</title>
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background: #0e0e0e;
-      color: #fff;
+      font-family: 'Arial', sans-serif;
+      background: #f5f5f5; /* Light background for a clean look */
+      color: #333; /* Dark text for contrast */
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      text-align: center;
-      overflow: hidden;
-    }
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('https://stockcake.com/i/serene-park-morning_566932_1158604') repeat;
-      opacity: 0.05;
-      z-index: -1;
+      overflow-x: hidden;
+      scroll-behavior: smooth; /* Smooth scrolling */
     }
     .container {
-      width: 95%;
-      max-width: 1000px;
+      width: 100%;
+      max-width: 1200px; /* Wide container for desktop */
+      margin: 40px auto; /* Centered and spaced */
       padding: 20px;
-      border: 2px solid #e74c3c;
-      border-radius: 15px;
-      background: rgba(34, 34, 34, 0.9);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      margin-top: 40px;
-      position: relative;
-      z-index: 1;
-      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      background: #fff; /* White background for content */
+      border-radius: 10px; /* Rounded corners */
+      overflow: hidden; /* Ensure no overflow */
     }
     .hero-section {
-      background: linear-gradient(135deg, #e74c3c, #2ecc71);
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #e74c3c, #2ecc71); /* Gradient for color theme */
+      padding: 20px 30px; /* Space around content */
+      border-radius: 10px 10px 0 0; /* Rounded top corners */
+      color: #fff; /* White text for contrast */
+      text-align: left;
       position: relative;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
     }
     .hero-section h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin: 0;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      line-height: 1.2;
     }
-    .hero-section::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 150%;
-      height: 100%;
-      background: url('https://stockcake.com/i/digital-neural-network_427372_501262') no-repeat;
-      background-size: cover;
-      opacity: 0.1;
-      transform: translateX(-50%);
+    .hero-section img {
+      height: 100px;
+      margin-left: auto;
+      border-radius: 10px;
     }
     .iframe-container {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
       height: 0;
       width: 100%;
       background: #27ae60;
-      border: 2px solid #27ae60;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 10px 10px;
       overflow: hidden;
-      transition: transform 0.3s;
-      margin-bottom: 20px;
-    }
-    .iframe-container:hover {
-      transform: scale(1.05) rotate(1deg);
     }
     .iframe-container iframe {
       position: absolute;
@@ -93,47 +65,53 @@
       width: 100%;
       height: 100%;
       border: none;
-      border-radius: 8px;
+      border-radius: 0 0 10px 10px;
     }
     .project-description {
-      font-size: 1.2em;
-      line-height: 1.5;
-      margin: 20px 0;
+      padding: 20px 30px;
+      text-align: left;
+      line-height: 1.6;
+      color: #666;
     }
     footer {
-      margin-top: 30px;
-      font-size: 1em;
-      color: #bdc3c7;
-      position: relative;
-      z-index: 1;
+      margin: 40px 0;
+      font-size: 0.9em;
+      color: #777;
     }
     footer a {
-      color: #e74c3c;
+      color: #3498db; /* Link color */
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
     footer a:hover {
-      color: #27ae60;
+      text-decoration: underline;
     }
     @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2em;
-      }
       .container {
-        width: 100%;
+        margin: 20px 10px;
         padding: 15px;
       }
-      .project-description {
-        font-size: 1em;
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
       }
-    }
-    @media (max-width: 480px) {
+      .hero-section img {
+        margin: 20px 0;
+        height: 80px;
+      }
       .hero-section h1 {
         font-size: 1.5em;
       }
       .project-description {
-        font-size: 0.9em;
+        padding: 15px 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-section h1 {
+        font-size: 1.2em;
+      }
+      .project-description {
+        padding: 10px 15px;
       }
     }
   </style>
@@ -141,17 +119,21 @@
 <body>
   <div class="container">
     <div class="hero-section">
-      <h1>Kabura Kuria's AI Projects - Bonga Sasa</h1>
+      <div>
+        <h1>Kabura Kuria's AI Portfolio - Bonga Sasa</h1>
+        <p>Explore cutting-edge AI projects with a focus on Kenyan culture and innovation.</p>
+      </div>
+      <img src="https://stockcake.com/i/serene-park-morning_566932_1158604" alt="Kenyan AI Theme">
     </div>
     <div class="iframe-container">
       <iframe src="https://kaburakuria-bonga-sasa.hf.space" allowfullscreen></iframe>
     </div>
     <div class="project-description">
-      <p>Explore the innovative AI solutions crafted by Kabura Kuria, showcasing cutting-edge technology and a deep connection to Kenyan culture.</p>
+      <p>This project showcases advanced AI technologies designed to enhance various aspects of life and business, inspired by the rich cultural heritage of Kenya.</p>
     </div>
-    <footer>
-      <p>Discover more at <a href="https://your-portfolio-link.com">Kabura Kuria's Portfolio</a></p>
-    </footer>
   </div>
+  <footer>
+    <p>Discover more projects at <a href="https://your-portfolio-link.com">Kabura Kuria's Portfolio</a></p>
+  </footer>
 </body>
 </html>
